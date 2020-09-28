@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { createStyles, makeStyles } from "@material-ui/core"
+import { createStyles, makeStyles } from "@material-ui/core";
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -44,8 +44,8 @@ const useStyles = makeStyles((theme) => createStyles({
   drawerFooter: {
     width: '100%',
     margin: 0,
+    marginTop: 'auto',
     padding: 0,
-    position: 'absolute',
     bottom: 0,
   },
 }));
