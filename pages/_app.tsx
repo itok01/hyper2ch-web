@@ -1,8 +1,25 @@
 import React from 'react';
+import { createStyles, makeStyles } from "@material-ui/core"
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
+
+const useStyles = makeStyles((theme) => createStyles({
+  '@global': {
+    '*::-webkit-scrollbar': {
+      height: theme.spacing(1),
+      width: theme.spacing(1),
+    },
+    '*::-webkit-scrollbar-track': {
+      display: 'none',
+    },
+    '*::-webkit-scrollbar-thumb': {
+      backgroundColor: 'rgba(0, 0, 0, 0.2)',
+      borderRadius: '10px',
+    },
+  },
+}));
 
 type Props = {
   Component: any,
@@ -19,6 +36,8 @@ const MyApp = (props: Props) => {
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);
+
+  useStyles();
 
   return (
     <React.Fragment>
