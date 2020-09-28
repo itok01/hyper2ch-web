@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => createStyles({
   root: {
     height: '100vh',
     padding: 0,
-    marginLeft: theme.spacing(1),
+    paddingLeft: theme.spacing(1),
     overflowX: 'auto',
     overflowY: 'hidden',
     whiteSpace: 'nowrap',
