@@ -36,7 +36,6 @@ const ThreadsColumn = (props: Props) => {
 
   return (
     <List className={classes.root}>
-      <div></div>
       {threads.map((thread) => (
         <ThreadCard thread={thread} />
       ))}
