@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStyles, List, makeStyles } from "@material-ui/core"
-import Column from "../components/Column"
+import ColumnItem from '../src/models/ColumnItem';
+import ThreadsColumn from './ThreadsColumn';
 
 const useStyles = makeStyles((theme) => createStyles({
   root: {
@@ -13,18 +14,26 @@ const useStyles = makeStyles((theme) => createStyles({
   },
 }));
 
-const ColumnList = () => {
+type Props = {
+  items: ColumnItem[],
+};
+
+const ColumnList = (props: Props) => {
   const classes = useStyles();
 
   return (
     <List className={classes.root}>
-      <Column />
-      <Column />
-      <Column />
-      <Column />
-      <Column />
-      <Column />
-      <Column />
+      {props.items.map((item) => {
+        switch (item.type) {
+          case 'threads':
+            return (
+              <ThreadsColumn url={item.url} />
+            );
+
+          default:
+            break;
+        }
+      })}
     </List>
   );
 }
