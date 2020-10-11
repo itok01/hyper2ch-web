@@ -2,6 +2,7 @@ import React from 'react';
 import { createStyles, List, makeStyles } from "@material-ui/core"
 import ColumnItem from '../src/models/ColumnItem';
 import ThreadsColumn from './ThreadsColumn';
+import MessagesColumn from './MessagesColumn';
 
 const useStyles = makeStyles((theme) => createStyles({
   root: {
@@ -28,6 +29,11 @@ const ColumnList = (props: Props) => {
           case 'threads':
             return (
               <ThreadsColumn url={item.url} />
+            );
+
+          case 'messages':
+            return (
+              <MessagesColumn url={item.url} />
             );
 
           default:

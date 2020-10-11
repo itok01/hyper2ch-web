@@ -19,6 +19,11 @@ const Home = () => {
 
   const [columnItems, _] = useState<ColumnItem[]>([
     { type: 'threads', url: 'https://api.example.com/api/threads?bbs=dog' },
+    { type: 'messages', url: 'https://api.example.com/api/messages?thread=1' },
+    { type: 'messages', url: 'https://api.example.com/api/messages?thread=2' },
+    { type: 'messages', url: 'https://api.example.com/api/messages?thread=3' },
+    { type: 'messages', url: 'https://api.example.com/api/messages?thread=4' },
+    { type: 'messages', url: 'https://api.example.com/api/messages?thread=5' },
   ]);
 
   return (
